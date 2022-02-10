@@ -19,7 +19,7 @@ function Post(props) {
         content,
         publish,
       },
-      url: 'http://localhost:3001/post',
+      url: 'https://lit-temple-22800.herokuapp.com/post',
       withCredentials: true,
     });
   };

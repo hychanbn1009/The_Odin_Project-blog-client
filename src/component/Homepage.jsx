@@ -8,7 +8,7 @@ import intro from '../assets/images/intro.jpg';
 function Homepage() {
   const [postList, setPostList] = useState(null);
 
-  const fetchPostData = () => fetch('http://localhost:3001/', { mode: 'cors' })
+  const fetchPostData = () => fetch('https://lit-temple-22800.herokuapp.com/', { mode: 'cors' })
     .then((res) => res.json())
     .then((response) => {
       setPostList(response);

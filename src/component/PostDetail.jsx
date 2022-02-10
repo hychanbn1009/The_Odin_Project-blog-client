@@ -10,7 +10,7 @@ function PostDetail() {
   const [commentDetail, setCommentDetail] = useState(null);
   const [fetchNew, setFetchNew] = useState(false);
 
-  const url = `http://localhost:3001${window.location.pathname}`;
+  const url = `https://lit-temple-22800.herokuapp.com${window.location.pathname}`;
 
   const fetchPost = (url) => {
     fetch(url)

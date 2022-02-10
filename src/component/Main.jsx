@@ -25,7 +25,7 @@ function Main() {
         username: loginUsername,
         password: loginPassword,
       },
-      url: 'http://localhost:3001/login',
+      url: 'https://lit-temple-22800.herokuapp.com/login',
       withCredentials: true,
     })
       .then((res) => {

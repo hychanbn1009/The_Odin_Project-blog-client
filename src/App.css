@@ -1,0 +1,151 @@
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* justify-content: space-between; */
+
+}
+
+.content{
+  /* height: calc(100vh - 56px); */
+  margin-top: 0px;
+
+  /* margin: 2vh 0rem; */
+}
+
+.header{
+  height: 56px;
+}
+
+.footer{
+  height: 5vh;
+}
+
+.container{
+  height:100%;
+}
+
+.post-body a{
+  color:black;
+  text-decoration:none;
+}
+
+.introduction-conatiner{
+  /* background-color: #C84B31; */
+  color: white;
+  height: 40vh;
+  padding: 2vh;
+}
+
+
+.introduction-conatiner h1{
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.introduction-conatiner p{
+  font-size: 1rem;
+}
+
+.introduction-conatiner button{
+  color: black;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 99em;
+  border-width: 1px;
+  border-style: solid;
+  font-weight: 400;
+}
+
+hr{
+  background-color: red; 
+  height: 1px; 
+  border: 0;
+}
+
+.post-title-container{
+  background-color: #476699;
+  padding: 2vh;
+}
+
+.post-title-container h2{
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+}
+
+.post-title-container small{
+  color: white;
+}
+
+.post-content-container{
+  background-color: #ECDBBA;
+  padding: 2vh;
+  color: black;
+  margin-bottom: 2rem;
+}
+
+.post-title-container h1{
+  text-align: center;
+  color:white;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.post-title-container p{
+  text-align: center;
+  color:white;
+  font-size: 1rem;
+  font-weight: 200;
+}
+
+.comment-body{
+  padding: 1rem;
+  color:white;
+  /* background-color: white; */
+  border: 1px solid white;
+}
+
+.post-content-container{
+  color:black
+}
+
+.comment-title-container{
+  margin-top: 2rem;
+  background-color: #5074ad;
+  color:white;
+  padding: 1rem 2rem 1rem 2rem;
+}
+
+.comment-content-container{
+  background-color: #546279;
+  color:white;
+  padding: 0 2rem 0 2rem;
+  margin-bottom: 2rem;
+}
+
+.comment-number{
+  color: white;
+  font-weight: 600;
+}
+
+.post-body-title{
+  color: white;
+  font-weight: 600;
+}

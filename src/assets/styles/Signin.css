@@ -1,0 +1,19 @@
+.signin-container{
+    display: flex;
+    align-self: center;
+    height: calc(100vh - 56px);
+}
+
+.signin-container div{
+    flex:1 
+}
+
+.signin-container div{
+    background-color: #2D4263;
+    color:white
+}
+
+.signin-container div{
+    background-color: #2D4263;
+    color:white
+}

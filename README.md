@@ -1,4 +1,4 @@
-# blog-api-server - Idea from [The Odin Project](https://www.theodinproject.com/paths/full-stack-javascript/courses/nodejs/lessons/blog-api)
+# blog-client - Idea from [The Odin Project](https://www.theodinproject.com/paths/full-stack-javascript/courses/nodejs/lessons/blog-api)
 A blog website created by React & Express & MongoDB. 
 
 ## Live demo

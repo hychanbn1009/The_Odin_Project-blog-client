@@ -16,8 +16,8 @@ const Post=(props)=> {
                 content: content,
                 refered_post: postId,
             },
-            url:`https://lit-temple-22800.herokuapp.com/${postId}`,
-            withCredentials: true
+            url:`https://lit-temple-22800.herokuapp.com/post/${postId}`,
+            withCredentials: false
         })
     }
 

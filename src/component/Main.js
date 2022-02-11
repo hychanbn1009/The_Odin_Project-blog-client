@@ -26,7 +26,7 @@ const Main=()=>{
                 password: loginPassword,
             },
             url:'https://lit-temple-22800.herokuapp.com/login',
-            withCredentials: true
+            withCredentials: false
         })
         .then((res)=>{
             setErrormessage(null)
@@ -68,6 +68,7 @@ const Main=()=>{
                     errormessage={errormessage}
                     />} />
                     <Route path='/post/:id' element={<PostDetail/>}/>
+                    <Route path='/' element={<Navigate to='/' />}/>
                     <Route path='/edit' element={userData?<EditPost/>:<Error/>}/>
                     <Route path='*' element={<Error/>}/>
                 </Routes>

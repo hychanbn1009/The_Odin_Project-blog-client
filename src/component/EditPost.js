@@ -9,7 +9,10 @@ const EditPost=()=>{
     const[fetchNew,setFetchNew]=useState(false);
 
     const fetchPost=()=>{
-        fetch('https://lit-temple-22800.herokuapp.com/edit')
+        fetch('https://lit-temple-22800.herokuapp.com/edit',{
+            method:"get",
+            headers:{"Content-Type":"application/json"}
+        })
         .then(function(response){
             return response.json()
         })
@@ -33,7 +36,7 @@ const EditPost=()=>{
         axios({
             method:'DELETE',
             url:`https://lit-temple-22800.herokuapp.com/edit/${postId}`,
-            withCredentials: true
+            withCredentials: false
         })
     }
 
@@ -42,7 +45,7 @@ const EditPost=()=>{
         axios({
             method:'PUT',
             url:`https://lit-temple-22800.herokuapp.com/edit/${postId}`,
-            withCredentials: true
+            withCredentials: false
         })
     }
 

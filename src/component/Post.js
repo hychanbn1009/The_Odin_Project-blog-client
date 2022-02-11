@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from 'axios'
 import '../assets/styles/Post.css';
 import { useNavigate } from "react-router-dom";
@@ -9,10 +9,10 @@ const Post=(props)=> {
     const [title,setTitle]=useState('');
     const [content,setContent]=useState('');
     const [publish,setPublish]=useState(false);
+    const [APIKey,setAPIKey]=useState('')
 
 
     const fetchPost =()=>{
-        console.log(title,content,publish)
         axios({
             method:'POST',
             data:{
@@ -22,8 +22,18 @@ const Post=(props)=> {
                 publish: publish,
             },
             url:'https://lit-temple-22800.herokuapp.com/post',
-            withCredentials: true
-        }).then((res)=>console.log(res.data))
+            withCredentials: false
+        })
+    }
+
+    const fetchAPIKey=()=>{
+        fetch('https://lit-temple-22800.herokuapp.com/post',{mode:'cors'})
+        .then(function(response){
+            return response.json()
+        })
+        .then(function(key){
+            return (key)
+        })
     }
 
     const navigate = useNavigate(); 
@@ -38,6 +48,10 @@ const Post=(props)=> {
         navigate('/')
         , 1500);
     }
+
+    useEffect(()=>{
+        setAPIKey(fetchAPIKey())
+    },[])
 
     return (
         
@@ -54,11 +68,19 @@ const Post=(props)=> {
                         <div className="form-group">
                             <label htmlFor="content">Content</label>
                             <Editor
+                            apiKey={APIKey}
                             init={{
                             height: 500,
                             menubar: false,
+                            plugins: [
+                                "advlist autolink lists link image",
+                                "charmap print preview anchor help",
+                                "searchreplace visualblocks code",
+                                "insertdatetime media table paste wordcount",
+                            ],
                             }} 
                             onEditorChange={contentOnChange}
+                            textareaName="content"
                             value={content}/>
                         </div>
                         <div className="form-check">

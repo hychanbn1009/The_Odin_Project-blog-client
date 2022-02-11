@@ -2,7 +2,7 @@
 A blog website created by React & Express & MongoDB. 
 
 ## Live demo
-[Live Demo](https://hychanbn1009.github.io/blog-client/)
+[Live Demo](https://hychanbn1009.github.io/The_Odin_Project-blog-client/)
 
 ## Technologies
 - HTML5
@@ -23,10 +23,10 @@ A blog website created by React & Express & MongoDB.
 
 
 ## Frontend
-* Repo: [https://github.com/hychanbn1009/blog-client](https://github.com/hychanbn1009/blog-client)
+* Repo: [https://github.com/hychanbn1009/blog-client](https://github.com/hychanbn1009/The_Odin_Project-blog-client/)
 #### Testing User:
 * username:tester
 * password:testing
 
 ## Backend:
-* Repo: [https://github.com/hychanbn1009/blog-api-server](https://github.com/hychanbn1009/blog-api-server)
+* Repo: [https://github.com/hychanbn1009/blog-api-server](https://github.com/hychanbn1009/The_Odin_Project-blog-api-server)

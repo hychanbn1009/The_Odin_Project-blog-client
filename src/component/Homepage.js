@@ -3,11 +3,13 @@ import {NavLink} from "react-router-dom";
 import { useState,useEffect } from 'react';
 import intro from '../assets/images/intro.jpg';
 import parse from 'html-react-parser';
+import '../assets/styles/Homepage.css';
 
 const Homepage=(props)=>{
 
     const [postList,setPostList]=useState(null);
 
+    // Fetch new post from Backend
     const fetchPostData =()=>fetch('https://lit-temple-22800.herokuapp.com/',{mode:'cors'})
     .then(function(res){
         return res.json();
@@ -19,7 +21,7 @@ const Homepage=(props)=>{
         console.log(err)
     })
 
-
+    // update the fetch post method if route is homepage
     useEffect(()=>{
         fetchPostData()
     },[])
@@ -39,6 +41,7 @@ const Homepage=(props)=>{
                     </div>
                 </div>
                 <div className='col-12 post-body mt-3'>
+                {/* display all Postlist and if the post is published. If unpublished, print empty */}
                 {postList?postList.map((post,index)=>{
                     const path=`/post/${post._id}`
                     if(post.publish===true){

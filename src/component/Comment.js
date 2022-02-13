@@ -8,6 +8,7 @@ const Post=(props)=> {
 
     const postId=props.postId
 
+    // Handle post comment method
     const postComment =()=>{
         axios({
             method:'POST',
@@ -21,9 +22,12 @@ const Post=(props)=> {
         })
     }
 
+    // Handle submit comment
     const submitNewComment=()=>{
         postComment()
-        props.setFetchNew(true)
+        props.setFetchNew(true) // When fetch new is true, useEffect will update the component
+        setContent('') // Clean up Content input 
+        setAuthor('') // Clean up Author input 
     }
 
     return (

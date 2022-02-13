@@ -1,0 +1,25 @@
+.comment-title-container{
+    margin-top: 2rem;
+    background-color: #5074ad;
+    color:white;
+    padding: 1rem 2rem 1rem 2rem;
+}
+  
+.comment-content-container{
+    background-color: #546279;
+    color:white;
+    padding: 0 2rem 0 2rem;
+    margin-bottom: 2rem;
+}
+  
+.comment-number{
+    color: white;
+    font-weight: 600;
+}
+
+.comment-body{
+    padding: 1rem;
+    color:white;
+    /* background-color: white; */
+    border: 1px solid white;
+}

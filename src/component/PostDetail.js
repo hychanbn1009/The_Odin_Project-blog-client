@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import moment from "moment";
 import Comment from "./Comment"
 import parse from 'html-react-parser';
+import '../assets/styles/Comment.css';
 import axios from "axios";
 
-const PostDetail =()=>{
+const PostDetail =(props)=>{
 
     const[postDetail,setPostDetail]=useState(null);
     const[commentDetail,setCommentDetail]=useState(null);
@@ -13,9 +14,10 @@ const PostDetail =()=>{
     const[fetchNew,setFetchNew]=useState(false);
     const[selectedId,setSelectedId]=useState('')
     
+    // Set current url
     const url=`https://lit-temple-22800.herokuapp.com${window.location.pathname}`
 
-
+    // fetch post with comment from backend
     const fetchPost=(url)=>{
         fetch(url,{mode:'cors'})
         .then(function(response){
@@ -30,6 +32,7 @@ const PostDetail =()=>{
         })
     }
 
+    // Handle comment delete 
     const deleteComment=(commentId)=>{
         setFetchNew(true)
         axios({
@@ -42,12 +45,15 @@ const PostDetail =()=>{
         })
     }
 
+    // search the comment author and comment content from comment list
+    // set the author and content for input box
     const editComment=(commentId)=>{
         setAuthor(commentDetail.filter(comment=>comment._id===commentId).map(comment=>comment.author)[0])
         setContent(commentDetail.filter(comment=>comment._id===commentId).map(comment=>comment.content)[0])
         setSelectedId(commentId)
     }
 
+    // Handle comment update. Clear up the selected comment Id after submittion
     const updateComment=(commentId)=>{
         setFetchNew(true)
         axios({
@@ -63,6 +69,7 @@ const PostDetail =()=>{
         setSelectedId('')
     }
 
+    // update the comment if there is any changes
     useEffect(()=>{
         fetchPost(url)
         if(fetchNew){
@@ -105,13 +112,17 @@ const PostDetail =()=>{
                         </div>}
                         <div className='comment-content-container'>
                             <small>Posted on: {moment(comment.timestamp).format('MMM DD YYYY')}</small>
-                            <div className="btn-group d-block pb-2 pt-2" role="group" >
-                                {comment._id===selectedId?
-                                <button id={comment._id} className="btn btn-sm btn-primary" onClick={(event)=>updateComment(event.target.id)}>Submit</button>
-                                :
-                                <button id={comment._id} type="button" className="btn btn-sm btn-success" onClick={(event)=>editComment(event.target.id)}>Edit</button>}
-                                <button id={comment._id} type="button" className="btn btn-sm btn-danger" onClick={(event)=>deleteComment(event.target.id)}>Delete</button>
-                            </div>
+                            {props.userData?
+                                <div className="btn-group d-block pb-2 pt-2" role="group" >
+                                    {comment._id===selectedId?
+                                    <button id={comment._id} className="btn btn-sm btn-primary" onClick={(event)=>updateComment(event.target.id)}>Submit</button>
+                                    :
+                                    <button id={comment._id} type="button" className="btn btn-sm btn-success" onClick={(event)=>editComment(event.target.id)}>Edit</button>}
+                                    <button id={comment._id} type="button" className="btn btn-sm btn-danger" onClick={(event)=>deleteComment(event.target.id)}>Delete</button>
+                                </div>
+                            :
+                            ''
+                            }
                         </div>
                     </div>
                     )

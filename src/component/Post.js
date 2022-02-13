@@ -11,7 +11,7 @@ const Post=(props)=> {
     const [publish,setPublish]=useState(false);
     const [APIKey,setAPIKey]=useState('')
 
-
+    // Handle Post submit
     const fetchPost =()=>{
         axios({
             method:'POST',
@@ -26,6 +26,7 @@ const Post=(props)=> {
         })
     }
 
+    // Fetch the API key from backend (for demo only)
     const fetchAPIKey=()=>{
         fetch('https://lit-temple-22800.herokuapp.com/post',{mode:'cors'})
         .then(function(response){
@@ -42,6 +43,7 @@ const Post=(props)=> {
         setContent(PostContent)
     }
 
+    // After submit the post, redirect user to homepage
     const submitPost=()=>{
         fetchPost();
         setTimeout(() => 
@@ -49,6 +51,7 @@ const Post=(props)=> {
         , 1500);
     }
 
+    // Update the API key when route is Post
     useEffect(()=>{
         setAPIKey(fetchAPIKey())
     },[])

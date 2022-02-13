@@ -2,7 +2,7 @@
   "name": "blog",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://hychanbn1009.github.io/",
+  "homepage": "https://hychanbn1009.github.io/The_Odin_Project-blog-client/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.2",

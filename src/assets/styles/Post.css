@@ -5,3 +5,39 @@
     justify-content: center;
     color:white
 }
+
+.post-title-container h1{
+    text-align: center;
+    color:white;
+    font-size: 3rem;
+    font-weight: 700;
+}
+  
+.post-title-container p{
+    text-align: center;
+    color:white;
+    font-size: 1rem;
+    font-weight: 200;
+}
+
+.post-title-container{
+    background-color: #476699;
+    padding: 2vh;
+}
+  
+.post-title-container h2{
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+}
+  
+.post-title-container small{
+    color: white;
+}
+
+.post-content-container{
+    background-color: #ECDBBA;
+    padding: 2vh;
+    color: black;
+    margin-bottom: 2rem;
+}

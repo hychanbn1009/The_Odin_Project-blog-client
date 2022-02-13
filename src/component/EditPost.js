@@ -8,6 +8,7 @@ const EditPost=()=>{
     const[postList,setPostList]=useState(null);
     const[fetchNew,setFetchNew]=useState(false);
 
+    // Fetch new post from Backend
     const fetchPost=()=>{
         fetch('https://lit-temple-22800.herokuapp.com/edit',{
             method:"get",
@@ -17,22 +18,23 @@ const EditPost=()=>{
             return response.json()
         })
         .then(function(post){
-            setPostList(post)
+            setPostList(post) // Store the list into Postlist
 
         })
         .catch(function(error){
-            console.log(error)
+            console.log(error) // If error, print the error
         })
     }
-
-    const navigate = useNavigate(); 
+ 
+    const navigate = useNavigate();  // for redirect the route
 
     const checkPost=(postId)=>{
         navigate(`/post/${postId}`)
     }
 
+    // Handle Post delete method
     const deletePost =(postId)=>{
-        setFetchNew(true)
+        setFetchNew(true) // If the post is deleted, update the post list
         axios({
             method:'DELETE',
             url:`https://lit-temple-22800.herokuapp.com/edit/${postId}`,
@@ -40,8 +42,9 @@ const EditPost=()=>{
         })
     }
 
+    // Handle Post update method
     const updatePostPublish =(postId)=>{
-        setFetchNew(true)
+        setFetchNew(true) // If the post is udpated, update the post list
         axios({
             method:'PUT',
             url:`https://lit-temple-22800.herokuapp.com/edit/${postId}`,
@@ -49,6 +52,8 @@ const EditPost=()=>{
         })
     }
 
+    // Check if the FetchNew is changed or not
+    // If fetchNew is true, update the Postlist
     useEffect(()=>{
         fetchPost()
         if(fetchNew){

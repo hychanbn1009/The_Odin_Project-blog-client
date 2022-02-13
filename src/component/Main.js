@@ -18,6 +18,7 @@ const Main=()=>{
     const [route,setRoute]=useState(null);
     const [errormessage,setErrormessage]=useState(null);
 
+    // Handle user signin method
     const signin =()=>{
         axios({
             method:'POST',
@@ -29,11 +30,11 @@ const Main=()=>{
             withCredentials: false
         })
         .then((res)=>{
-            setErrormessage(null)
+            setErrormessage(null) // If user input correct data, clear up the error message
             setUserData(res.data)
         })
         .catch((error)=>{
-            setErrormessage(error.response.data)
+            setErrormessage(error.response.data) // If user iuput wrong data, set the error message
         })
     }
 
@@ -67,8 +68,10 @@ const Main=()=>{
                     signin={signin}
                     errormessage={errormessage}
                     />} />
-                    <Route path='/post/:id' element={<PostDetail/>}/>
-                    <Route path='/' element={<Navigate to='/' />}/>
+                    <Route path='/post/:id' element={<PostDetail 
+                    userData={userData} 
+                    />}/>
+                    <Route path='/The_Odin_Project-blog-client' element={<Navigate to='/' />}/>
                     <Route path='/edit' element={userData?<EditPost/>:<Error/>}/>
                     <Route path='*' element={<Error/>}/>
                 </Routes>

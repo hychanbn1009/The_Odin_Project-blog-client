@@ -1,7 +1,12 @@
+import { useEffect } from 'react';
 import input from '../assets/images/input.jpg'
 import '../assets/styles/Signin.css'
 
 const Login=(props)=> {
+
+    useEffect(()=>{
+        props.setErrormessage(null)
+    },[])
 
     return (
         <div>
@@ -27,7 +32,7 @@ const Login=(props)=> {
                                             <label htmlFor="password">Password</label>
                                             <input type="password" className="form-control" id="password" onChange={(event)=>props.setLoginPassword(event.target.value)}/>
                                         </div>
-                                        <small className="text-white">{props.errormessage?props.errormessage:''}</small>
+                                        <small className="text-white d-block">{props.errormessage?props.errormessage:''}</small>
                                     <button className="btn btn-dark mt-2" onClick={props.signin}>Sign In</button>
                                 </div>
                             </div>

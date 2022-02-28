@@ -66,6 +66,7 @@ const Main=()=>{
                     setLoginPassword={setLoginPassword}
                     setUserData={setUserData}
                     signin={signin}
+                    setErrormessage={setErrormessage}
                     errormessage={errormessage}
                     />} />
                     <Route path='/post/:id' element={<PostDetail 

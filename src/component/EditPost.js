@@ -10,7 +10,7 @@ const EditPost=()=>{
 
     // Fetch new post from Backend
     const fetchPost=()=>{
-        fetch('https://lit-temple-22800.herokuapp.com/edit',{
+        fetch('https://blog-api-6m73.onrender.com/edit',{
             method:"get",
             headers:{"Content-Type":"application/json"}
         })

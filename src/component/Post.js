@@ -21,14 +21,14 @@ const Post=(props)=> {
                 content: content,
                 publish: publish,
             },
-            url:'https://lit-temple-22800.herokuapp.com/post',
+            url:'https://blog-api-6m73.onrender.com/post',
             withCredentials: false
         })
     }
 
     // Fetch the API key from backend (for demo only)
     const fetchAPIKey=()=>{
-        fetch('https://lit-temple-22800.herokuapp.com/post',{mode:'cors'})
+        fetch('https://blog-api-6m73.onrender.com/post',{mode:'cors'})
         .then(function(response){
             return response.json()
         })

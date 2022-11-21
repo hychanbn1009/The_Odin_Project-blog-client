@@ -10,12 +10,12 @@ const Homepage=(props)=>{
     const [postList,setPostList]=useState(null);
 
     // Fetch new post from Backend
-    const fetchPostData =()=>fetch('https://lit-temple-22800.herokuapp.com/',{mode:'cors'})
+    const fetchPostData =()=>fetch('https://blog-api-6m73.onrender.com',{mode:'cors'})
     .then(function(res){
         return res.json();
     })
     .then(function(response){
-        setPostList(response)
+        setPostList(response.reverse())
     })
     .catch(function(err){
         console.log(err)

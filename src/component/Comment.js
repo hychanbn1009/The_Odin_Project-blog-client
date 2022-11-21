@@ -17,7 +17,7 @@ const Post=(props)=> {
                 content: content,
                 refered_post: postId,
             },
-            url:`https://lit-temple-22800.herokuapp.com/post/${postId}`,
+            url:`https://blog-api-6m73.onrender.com/post/${postId}`,
             withCredentials: false
         })
     }

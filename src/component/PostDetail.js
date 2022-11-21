@@ -15,7 +15,7 @@ const PostDetail =(props)=>{
     const[selectedId,setSelectedId]=useState('')
     
     // Set current url
-    const url=`https://lit-temple-22800.herokuapp.com${window.location.pathname}`
+    const url=`https://blog-api-6m73.onrender.com${window.location.pathname}`
 
     // fetch post with comment from backend
     const fetchPost=(url)=>{
